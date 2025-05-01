@@ -25,6 +25,7 @@ sudo apt install -y nohang  # on CentOS, you can use use "yum"
 sudo cp ./examples/nohang.conf /etc/nohang/nohang.conf
 sudo systemctl enable nohang.service
 sudo systemctl start nohang.service
+sudo modprobe br_netfilter || true  # sometimes needed on Debian
 
 cp examples/cluster.ini .
 ./bin/docker.sh
